@@ -99,3 +99,43 @@ window.addEventListener('load', function() {
                   }
               })
               .catch(error => console.log(error));
+
+              function getTzeit85deg() {
+                return new Promise(function(resolve, reject) {
+                  var xhr = new XMLHttpRequest();
+                  var currentDate = new Date().toISOString().split('T')[0];
+                  xhr.open('GET', 'https://www.hebcal.com/zmanim?cfg=json&geonameid=294514&date='+ currentDate, true);
+                  xhr.onload = function() {
+                    if (xhr.status === 200) {
+                      try {
+                        var data = JSON.parse(xhr.responseText);
+                        var times = data.times;
+                        var tzeit85deg = times.tzeit85deg;
+                        var tzeit85degHHMM = tzeit85deg.split('T')[1].split('+')[0];
+                        resolve(tzeit85degHHMM);
+                      } catch (error) {
+                        reject(error);
+                      }
+                    } else {
+                      reject(new Error('Request failed. Status: ' + xhr.status));
+                    }
+                  };
+                  xhr.onerror = function() {
+                    reject(new Error('Request failed.'));
+                  };
+                  xhr.send();
+                });
+              }
+          
+              getTzeit85deg()
+                .then(function(tzeit85deg) {
+                  var outputElement = document.getElementById('output');
+                  if (tzeit85deg > '18:00') {
+                    outputElement.textContent = 'Out of work time';
+                  } else {
+                    outputElement.textContent = tzeit85deg;
+                  }
+                })
+                .catch(function(error) {
+                  console.error(error);
+                });
