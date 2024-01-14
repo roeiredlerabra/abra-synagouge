@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(14 25 50 / 97%);
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+.navbar {
+    background-image: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.navbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 14px;
+    flex: 1;
+}
+
+.navbar i {
+    margin-bottom: 5px;
+}
+
+.navbar a img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.content {
+    padding: 16px;
+}
+
+#home {
+    display: block;
+}
+
+#location,
+#info {
+    display: none;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.top-navbar img {
+    height: 20%;
+}
+
+.a {
+    height: 160px;
+}
+
+section {
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    direction: rtl;
+    text-align: right;
+}
+h4 {
+    font-size: 16px;
+    line-height: 1.5;
+    direction: rtl;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ff9f80;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #ff9f80;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #d42c61;
+}
+
+tr:hover {
+    background-color: #ffdef0;
+}
+
+.video-container {
+
+}
+.bh {
+position: fixed;
+top: 0;
+right: 0;
+padding-right: 10px;
+}
+.custom-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.custom-list li {
+margin-bottom: 10px;
+}
+
+.custom-list a {
+display: inline-block;
+padding: 5px 10px;
+background-color: #f1f1f1;
+text-decoration: none;
+color: #333;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.custom-list a:hover {
+background-color: #ccc;
+}
