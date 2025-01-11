@@ -1,162 +1,305 @@
 <!DOCTYPE html>
-<html>
-
+<html dir="rtl" lang="he">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- MS, fb & Whatsapp -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בית כנסת בראשית</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<!-- MS Tile - for Microsoft apps-->
-<meta name="msapplication-TileImage" content="https://github.com/roeiredlerabra/abra-synagouge/blob/main/black-overlay-modern-grunge-thumbnail-background-free-vector.jpg?raw=true">    
-
-<!-- fb & Whatsapp -->
-
-<!-- Site Name, Title, and Description to be displayed -->
-<meta property="og:site_name" content="בית כנסת בראשית">
-<meta property="og:title" content="בית כנסת בראשית">
-<meta property="og:description" content="בית כנסת בראשית">
-
-<!-- Image to display -->
-<!-- Replace   «example.com/image01.jpg» with your own -->
-<meta property="og:image" content="https://github.com/roeiredlerabra/abra-synagouge/blob/main/black-overlay-modern-grunge-thumbnail-background-free-vector.jpg?raw=true">
-
-<!-- No need to change anything here -->
-<meta property="og:type" content="website" />
-<meta property="og:image:type" content="image/jpeg">
-
-<!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
-<meta property="og:image:width" content="300">
-<meta property="og:image:height" content="300">
-
-<!-- Website to visit when clicked in fb or WhatsApp-->
-<meta property="og:url" content="https://roeiredlerabra.github.io/abra-synagouge/">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="logic.js"></script>
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+        * { font-family: 'Heebo', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #4AEADC 0%, #9778D1 20%, #CF2ABA 40%, #EE2C82 60%, #FB6962 80%, #FEF84C 100%);
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a202c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
+        }
+    </style>
 </head>
 
-<body>
-    <center>
-        <div>
-            <img class="top-navbar" id="top-navbar"
-                src="https://www.pc.co.il/wp-content/uploads/2023/07/Abra-logo-Dark-BG.jpg" alt="Logo">
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="relative bg-gray-800 shadow-lg">
+        <div class="flex justify-between items-center p-4">
+            <img class="h-12 rounded-lg" src="https://www.pc.co.il/wp-content/uploads/2023/07/Abra-logo-Dark-BG.jpg" alt="Logo">
+            <span class="text-xl font-bold text-yellow-400">בס"ד</span>
+            <a href="https://chat.whatsapp.com/Bur5ekeHSPs5EPXMwZ4mJh" 
+               class="flex flex-col items-center text-green-500 hover:text-green-400 transition-colors duration-300">
+                <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
+                <span class="text-sm">קבוצת ווטסאפ</span>
+            </a>
         </div>
-        <div class="bh">
-            <p>בס"ד</p>
-          </div>
-          <a id="whatsapp-icon" href="https://chat.whatsapp.com/Bur5ekeHSPs5EPXMwZ4mJh">
-            <i class="fab fa-whatsapp"></i>
-            <span>קבוצת ווטסאפ</span>
-          </a>
-    </center>
-    <div class="content" id="home">
-        <h2>בית</h2>
-        <center><h4 id="hebrew-date"></h4></center>
-        <section>
-            <h1>אודות</h1>
-            <p>בית הכנסת "בראשית" הוקם ע''י עובדי אברא </p>
-            <p>בית הכנסת "בראשית" נקרא כך בעקבות שמה של החברה "אברא" שמשמעותה יצירה ובריאה.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pb-20 mt-6">
+        <!-- Home Section -->
+        <section id="home" class="space-y-6">
+            <h2 class="text-3xl font-bold text-center my-6 text-blue-400" id="hebrew-date"></h2>
+            
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg transform hover:scale-102 transition-transform duration-300" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-4 text-blue-300">אודות</h3>
+                <p class="text-gray-300 leading-relaxed">בית הכנסת "בראשית" הוקם ע''י עובדי אברא</p>
+                <p class="text-gray-300 leading-relaxed mt-2">בית הכנסת "בראשית" נקרא כך בעקבות שמה של החברה "אברא" שמשמעותה יצירה ובריאה.</p>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-4 text-blue-300">זמני תפילה</h3>
+                <div class="overflow-x-auto rounded-lg">
+                    <table class="w-full">
+                        <thead class="bg-blue-600">
+                            <tr>
+                                <th class="p-3 text-lg">תפילה</th>
+                                <th class="p-3 text-lg">זמן</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-700 divide-y divide-gray-600">
+                            <tr class="hover:bg-gray-600 transition-colors duration-200">
+                                <td class="p-3">שחרית</td>
+                                <td class="p-3">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-600 transition-colors duration-200">
+                                <td class="p-3">מנחה</td>
+                                <td class="p-3">13:15</td>
+                            </tr>
+                            <tr class="hover:bg-gray-600 transition-colors duration-200">
+                                <td class="p-3">ערבית</td>
+                                <td class="p-3" id="output"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h1>מיקום</h1>
-            <p>בית הכנסת ממוקם בחדר ישיבות "בננית"</p>
+        <!-- Prayer Times Section -->
+        <section id="times" class="hidden space-y-6">
+            <h2 class="text-3xl font-bold text-center my-6 text-blue-400">זמני היום</h2>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                <div class="overflow-x-auto rounded-lg">
+                    <table id="timesTable" class="w-full">
+                        <thead class="bg-blue-600">
+                            <tr>
+                                <th class="p-3 text-lg">זמן</th>
+                                <th class="p-3 text-lg">שעה</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-700 divide-y divide-gray-600">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h1>זמני תפילה</h1>
-            <table>
-                <tr>
-                    <th>תפילה</th>
-                    <th>זמן</th>
-                </tr>
-                <tr>
-                    <td>שחרית</td>
-                    <td>null</td>
-                </tr>
-                <tr>
-                    <td>מנחה</td>
-                    <td>13:15</td>
-                </tr>
-                <tr>
-                    <td>ערבית</td>
-                    <td id="output"></td>
-                </tr>
-            </table>
+        <!-- Location Section -->
+        <section id="location" class="hidden space-y-6">
+            <h2 class="text-3xl font-bold text-center my-6 text-blue-400">מיקום</h2>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg" data-aos="fade-up">
+                <div class="text-gray-300 leading-relaxed">
+                    <p class="mb-4">חדר ישיבות "בננית"</p>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>קומה 19</li>
+                            <li>לובי אברא ראשי</li>
+                            <li>פנייה שמאלה לרחבת האוכל</li>
+                            <li>פנייה שמאלה לכיוון המטבח</li>
+                            <li>מעבר בדלת</li>
+                            <li>פנייה שמאלה לחדר בננית</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </section>
-        <center><img class="a" src="judaism-israel-svgrepo-com.svg" alt="Logo"></center>
-        <br><br>
-    </div>
 
-    <div class="content" id="location">
-        <h2>מיקום</h2>
-        <div class="video-container">
-            <video id="location-video" src="מצגת1.mp4" width="100%" height="auto" controls loop muted></video>
-            <section>
-                <h1>מיקום</h1>
-                <p>קומה 19 > לובי אברא ראשי > פנייה שמאלה לרחבת האוכל > פנייה שמאלה לכיוון המטבח > מעבר בדלת > פנייה שמאלה לחדר בננית</p>
-            </section>
+        <!-- Siddur Section -->
+        <section id="siddur" class="hidden space-y-6">
+            <h2 class="text-3xl font-bold text-center my-6 text-blue-400">סידורים</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת מנחה - נוסח אשכנז" 
+                   class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 flex items-center">
+                    <i class="fas fa-book-open text-blue-400 mr-3"></i>
+                    <span>תפילת מנחה - נוסח אשכנז</span>
+                </a>
+                <a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת מנחה - נוסח ספרד"
+                   class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 flex items-center">
+                    <i class="fas fa-book-open text-blue-400 mr-3"></i>
+                    <span>תפילת מנחה - נוסח ספרד</span>
+                </a>
+                <a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת ערבית - נוסח אשכנז"
+                   class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 flex items-center">
+                    <i class="fas fa-book-open text-blue-400 mr-3"></i>
+                    <span>תפילת ערבית - נוסח אשכנז</span>
+                </a>
+                <a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת ערבית - נוסח ספרד"
+                   class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 flex items-center">
+                    <i class="fas fa-book-open text-blue-400 mr-3"></i>
+                    <span>תפילת ערבית - נוסח ספרד</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed bottom-0 w-full gradient-bg shadow-lg">
+        <div class="flex justify-around p-4">
+            <button onclick="showSection('home')" class="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-sm mt-1">בית</span>
+            </button>
+            <button onclick="showSection('location')" class="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                <i class="fas fa-map-marker-alt text-xl"></i>
+                <span class="text-sm mt-1">מיקום</span>
+            </button>
+            <button onclick="showSection('times')" class="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                <i class="fas fa-clock text-xl"></i>
+                <span class="text-sm mt-1">זמנים</span>
+            </button>
+            <button onclick="showSection('siddur')" class="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                <i class="fas fa-book text-xl"></i>
+                <span class="text-sm mt-1">סידור</span>
+            </button>
         </div>
-    </div>
+    </nav>
 
-    <div class="content" id="info" dir="rtl">
-        
-        <h2>אירועים</h2>
-        <table id="events-table">
-            <thead>
-                <tr>
-                    <th>אירועים</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <h2>מידע נוסף</h2>
-        <table id="timesTable">
-            <tr>
-                <th>Time</th>
-                <th>Value</th>
-            </tr>
-        </table>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
 
-        <br><br><br>
-    </div>
-    <div class="content" id="siddur" dir="rtl">
-        
-        <p>סידורים</p>
-        <ul  class="custom-list" data-font-size="15" data-font-size-type="px">
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת מנחה - נוסח אשכנז" data-font-size="15" data-font-size-type="px">תפילת מנחה - נוסח אשכנז</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת מנחה - נוסח ספרד" data-font-size="15" data-font-size-type="px">תפילת מנחה - נוסח ספרד</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת מנחה - נוסח ספרדי עדות המזרח" data-font-size="15" data-font-size-type="px">תפילת מנחה - נוסח ספרדי עדות המזרח</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת ערבית - נוסח אשכנז" data-font-size="15" data-font-size-type="px">תפילת ערבית - נוסח אשכנז</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת ערבית - נוסח ספרד" data-font-size="15" data-font-size-type="px">תפילת ערבית - נוסח ספרד</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת ערבית - נוסח ספרדי עדות המזרח" data-font-size="15" data-font-size-type="px">תפילת ערבית - נוסח ספרדי עדות המזרח</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילה קצרה בעת סכנה" data-font-size="15" data-font-size-type="px">תפילה קצרה בעת סכנה</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=תפילת השל&quot;ה הקדוש" data-font-size="15" data-font-size-type="px">תפילת השל"ה הקדוש</a></li>
-			<li data-font-size="15" data-font-size-type="px"><a href="https://xn--8dbjj4a3a.com/versions.php?id=הדלקת נרות חנוכה" data-font-size="15" data-font-size-type="px">הדלקת נרות חנוכה</a></li>
-		</ul>
-    </div>
+        // Translation object for prayer times
+        const timeTranslations = {
+            "chatzotNight": "חצות הלילה",
+            "alotHaShachar": "עלות השחר",
+            "misheyakir": "משיכיר",
+            "misheyakirMachmir": "משיכיר - מחמיר",
+            "dawn": "השמש נמצאת 6° מתחת לאופק בבוקר",
+            "sunrise": "הקצה העליון של השמש מופיע מעל האופק המזרחי בבוקר",
+            "sofZmanShma": "סוף זמן שמע",
+            "sofZmanShmaMGA": "סוף זמן שמע מגן אברהם",
+            "sofZmanShmaMGA16Point1": "Sof Zman Shma MGA 16.1",
+            "sofZmanTfilla": "סוף זמן תפילת שחרית",
+            "sofZmanTfillaMGA": "סוף זמן תפילת שחרית מגן אברהם",
+            "sofZmanTfillaMGA16Point1": "Sof Zman Tfilla MGA 16.1",
+            "chatzot": "חצות היום",
+            "minchaGedola": "מנחה גדולה",
+            "minchaKetana": "מנחה קטנה",
+            "plagHaMincha": "פלג המנחה",
+            "sunset": "שקיעה",
+            "dusk": "השמש נמצאת 6° מתחת לאופק בערב",
+            "tzeit7083deg": "כאשר 3 כוכבים בינוניים נראים בשמי הלילה",
+            "tzeit85deg": "כאשר 3 כוכבים קטנים נראים בשמי הלילה°",
+            "tzeit42min": "כאשר 3 כוכבים בינוניים נראים בשמי הלילה (קבוע 42 דקות לאחר השקיעה)",
+            "tzeit50min": "כאשר 3 כוכבים קטנים נראים בשמי הלילה (קבוע 50 דקות לאחר השקיעה)",
+            "tzeit72min": "כאשר 3 כוכבים קטנים נראים בשמי הלילה (קבוע 72 דקות לאחר השקיעה)"
+        };
 
-    <div class="navbar">
-        <a href="#" onclick="showContent('location')">
-            <i class="fas fa-map-marker-alt"></i>
-            מיקום
-        </a>
-        <a href="#" onclick="showContent('home')">
-            <i class="fas fa-home"></i>
-            בית
-        </a>
-        <a href="#" onclick="showContent('info')">
-            <i class="fas fa-info-circle"></i>
-            מידע
-        </a>
-        <a href="#" onclick="showContent('siddur')">
-            <i class="fas fa-book"></i>
-            סידור
-        </a>
-    </div>
+        // Show/Hide Sections
+        function showSection(sectionId) {
+            document.querySelectorAll('main section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
 
+        // Populate Times Table
+        function populateTable(times) {
+            const table = document.getElementById("timesTable");
+            const tbody = table.querySelector('tbody');
+            tbody.innerHTML = ''; // Clear existing rows
 
+            for (const key in times) {
+                const row = tbody.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+
+                cell1.className = 'p-3 text-right';
+                cell2.className = 'p-3 text-left';
+
+                cell1.textContent = timeTranslations[key] || key;
+
+                const dateTime = new Date(times[key]);
+                cell2.textContent = dateTime.toLocaleString('he-IL', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                row.className = 'hover:bg-gray-600 transition-colors duration-200';
+            }
+        }
+
+        // Fetch Times Data
+        async function fetchTimes() {
+            try {
+                const currentDate = new Date().toISOString().split('T')[0];
+                const response = await fetch(`https://www.hebcal.com/zmanim?cfg=json&geonameid=294514&date=${currentDate}`);
+                const data = await response.json();
+                populateTable(data.times);
+                
+                // Update Arvit time
+                const tzeit85deg = new Date(data.times.tzeit85deg).toLocaleTimeString('he-IL', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                const outputElement = document.getElementById('output');
+                outputElement.textContent = tzeit85deg > '18:00' ? 'מחוץ לשעות העבודה' : tzeit85deg;
+            } catch (error) {
+                console.error('Error fetching times:', error);
+            }
+        }
+
+        // Fetch Hebrew Date and Events
+        async function fetchHebrewDateAndEvents() {
+            try {
+                const currentDate = new Date().toISOString().split('T')[0];
+                const response = await fetch(`https://www.hebcal.com/converter?cfg=json&date=${currentDate}`);
+                const data = await response.json();
+                
+                // Update Hebrew date
+                document.getElementById('hebrew-date').textContent = data.hebrew;
+
+                // Update events table
+                const eventsTableBody = document.getElementById('events-table').getElementsByTagName('tbody')[0];
+                eventsTableBody.innerHTML = ''; // Clear existing events
+
+                data.events.forEach(event => {
+                    const row = eventsTableBody.insertRow();
+                    const cell = row.insertCell(0);
+                    cell.className = 'p-3 text-right hover:bg-gray-600 transition-colors duration-200';
+                    cell.textContent = event;
+                });
+            } catch (error) {
+                console.error('Error fetching Hebrew date and events:', error);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchHebrewDateAndEvents();
+            fetchTimes();
+            showSection('home');
+        });
+    </script>
 </body>
-
 </html>
